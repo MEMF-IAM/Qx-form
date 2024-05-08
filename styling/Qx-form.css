@@ -30,7 +30,7 @@ form-canvas {
     font-weight: bolder;
 }
 
-.layout-form-vertical {
+.layout-form-horizontal .layout-form-vertical {
 	padding: 0.4em;
 	border: 1px solid #aaa;
 	background-image:
@@ -39,6 +39,6 @@ form-canvas {
 	;
 }
 
-.layout-form-horizontal > div {
+.layout-form-horizontal .layout-form-horizontal > div {
 	margin-left: 2em;
 }
