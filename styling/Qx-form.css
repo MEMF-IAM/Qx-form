@@ -1,0 +1,31 @@
+/*
+@import url("https://memo.3bdesign.nl/index.php?title=UPEM/Implementation/QxForm.css&action=raw");
+*/
+
+form-caption {
+	background-color: #7B7BB7;
+}
+form-canvas {
+	background-color: #F2F2F8;
+}
+.activity-edit-form {
+	/* https://stackoverflow.com/a/31472069 */
+	/* NOTE::Mark the last color of the first gradient fully transparent or the following gradient will not be shown ! */
+	background-image:
+		linear-gradient(to bottom, rgba(72, 72, 132, 1) 0em, rgba(123, 123, 183, 1) 0.1em, rgba(242, 242, 248, 0) 0.3em),
+		linear-gradient(to top, rgba(123, 123, 183, 1) 0em, rgba(242, 242, 248, 1) 0.2em)
+	;
+}
+.ant-input[disabled] {
+	background-color: #F9E5D9;
+	color: #000;
+	font-style: italic;
+}
+.ant-btn[disabled],
+.ant-btn {
+/*
+    background-color: #F2F2F8 !important;
+*/
+    color: white !important;
+    font-weight: bolder;
+}
