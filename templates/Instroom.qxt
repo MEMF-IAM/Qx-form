@@ -1,0 +1,86 @@
+Aan medewerker
+
+❯ naam:		$(data.volledigeNaam)
+❯ pers.#:		$(data.personeelsnummer)
+❯ afdeling:	[$(data.afdelingscode)] $(data.afdelingsnaam)
+❯ functie:		[$(data.functiecode)] $(data.functienaam)
+
+op basis van persoonlijke zaken {?}(woon-werk $(data.vicinity)) {end}toe te wijzen electronische toegang:
+
+{if([data].[enrichment].[priveProfiel] > "")
+    }$(data.enrichment.priveProfiel){
+else
+    }❯ geen toewijzingen ❮{
+end}
+
+op basis van afdeling en functie toe te wijzen electronische toegang:
+
+{if([data].[enrichment].[afdelingProfiel] > "")
+    }$(data.enrichment.afdelingProfiel){
+    if([data].[enrichment].[functieProfiel] > "")}
+$(data.enrichment.functieProfiel){
+    end}{
+else
+    }{if([data].[enrichment].[functieProfiel] > "")
+        }$(data.enrichment.functieProfiel){
+    else
+        }❯ geen toewijzingen ❮{
+    end}{
+end}
+
+op basis van afdeling en functie toe te wijzen sleuteltoegang:
+
+{if([data].[enrichment].[afdelingSleutel] > "")
+    }$(data.enrichment.afdelingSleutel){
+    if([data].[enrichment].[functieSleutel] > "")}
+$(data.enrichment.functieSleutel){
+    end}{
+else
+    }{if([data].[enrichment].[functieSleutel] > "")
+        }$(data.enrichment.functieSleutel){
+    else
+        }❯ geen toewijzingen ❮{
+    end}{
+end}
+
+{if([data].[form].[FT_electronic_select_label] > "")
+
+    }Verzoek additioneel toe te wijzen electronische toegang:
+
+❯ {replace(replace([data].[form].[FT_electronic_select_label]," … ", " + "),"|","
+❯ ")}
+
+{end}{if([data].[form].[FT_electronic_remove_label] > "")
+
+    }Niet benodigde electronische toegang:
+
+❯ {replace(replace([data].[form].[FT_electronic_remove_label]," … ", " - "),"|","
+❯ ")}
+
+{end}{if([data].[form].[FT_electronic_motivation] > "")
+
+    }Motivatie, onderbouwing:
+
+❯ $(data.form.FT_electronic_motivation)
+
+{end}{if([data].[form].[FT_key_select_label] > "")
+
+    }Verzoek additioneel toe te wijzen sleuteltoegang:
+
+❯ {replace(replace([data].[form].[FT_key_select_label]," … ", " + "),"|","
+❯ ")}
+
+{end}{if([data].[form].[FT_key_remove_label] > "")
+
+    }Niet benodigde sleuteltoegang:
+
+❯ {replace(replace([data].[form].[FT_key_remove_label]," … ", " - "),"|","
+❯ ")}
+
+{end}{if([data].[form].[FT_key_motivation] > "")
+
+    }Motivatie, onderbouwing:
+
+❯ $(data.form.FT_key_motivation)
+
+{end}
