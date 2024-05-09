@@ -39,6 +39,6 @@ form-canvas {
 	;
 }
 
-.layout-form-horizontal > .layout-form-horizontal > div {
+.layout-form-horizontal > .layout-form-vertical > div {
 	margin-left: 2em;
 }
