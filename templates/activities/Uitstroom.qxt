@@ -1,0 +1,19 @@
+Aan medewerker
+
+❯ naam:		$(data.volledigeNaam)
+❯ pers.#:		$(data.personeelsnummer){?} ($(data.dienstverbandvolgnummer)){end}
+❯ afdeling:	[$(data.afdelingscode1)] $(data.afdelingsnaamVolledig1)
+❯ functie:		[$(data.functiecode1)] $(data.functienaam1)
+❯ uit dienst:		$(data.nlDatumuitdienst)
+
+momenteel toegewezen fysieke toegang:
+
+{if([data].[enrichment].[assignments] > "")
+
+    }$(data.enrichment.assignments){
+
+else
+
+    }❯ geen toewijzingen ❮{
+
+end}

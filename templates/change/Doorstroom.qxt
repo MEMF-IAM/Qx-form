@@ -1,0 +1,48 @@
+
+# Afdelingswijziging
+
+## Brief
+
+Medewerker [$(data.volledigeNaam)] ($(data.personeelsnummer)) verandert van afdeling.
+
+## Description
+
+Medewerker [$(data.volledigeNaam)] met personeelsnummer [$(data.personeelsnummer)] zal per [$(data.nlAfdelingsbegindatum2)] als [$(data.functienaam1)] werkzaam zijn op afdeling/unit [$(data.afdelingsnaamVolledig2)].
+
+De in te nemen en uit te reiken c.q. toe te wijzen middelen en privileges zijn in aangehechte activiteiten gespecificeerd.
+
+❯ naam:		$(data.volledigenaam)
+❯ pers #:	$(data.personeelsnummer){?} ($(data.dienstverbandvolgnummer)){end}
+❯ afdeling:	[$(data.afdelingscode1)] $(data.afdelingsnaamVolledig1)
+	wordt:	[$(data.afdelingscode2)] $(data.afdelingsnaamVolledig2)
+❯ functie:	[$(data.functiecode1)] $(data.functienaam1)
+❯ wijzigt:	$(data.nlAfdelingsbegindatum2)
+
+## Filter
+
+$(data.afdelingsbegindatum2) != $(data.functiebegindatum2)
+
+# Functie / Afdelingswijziging
+
+## Brief
+
+Medewerker [$(data.volledigeNaam)] ($(data.personeelsnummer)) verandert van {if([data].[functiebegindatum2] == [data].[afdelingsbegindatum2])}afdeling en {end}functie.
+
+## Description
+
+Medewerker [$(data.volledigeNaam)] met personeelsnummer [$(data.personeelsnummer)] zal per [$(data.nlFunctiebegindatum2)] als [$(data.functienaam2)] werkzaam zijn op afdeling/unit [{if([data].[functiebegindatum2] == [data].[afdelingsbegindatum2])}$(data.afdelingsnaamVolledig2){else}$(data.afdelingsnaamVolledig1){end}].
+
+De in te nemen en uit te reiken c.q. toe te wijzen middelen en privileges zijn in aangehechte activiteiten gespecificeerd.
+
+❯ naam:		$(data.volledigenaam)
+❯ pers #:	$(data.personeelsnummer){?} ($(data.dienstverbandvolgnummer)){end}
+❯ afdeling:	[$(data.afdelingscode1)] $(data.afdelingsnaamVolledig1){if([data].[functiebegindatum2] == [data].[afdelingsbegindatum2])}
+	wordt:	[$(data.afdelingscode2)] $(data.afdelingsnaamVolledig2){end}
+❯ functie:	[$(data.functiecode1)] $(data.functienaam1)
+	wordt:	[$(data.functiecode2)] $(data.functienaam2)
+❯ wijzigt:	$(data.nlAfdelingsbegindatum2)
+
+## Filter
+
+--
+

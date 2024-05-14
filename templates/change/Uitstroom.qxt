@@ -1,0 +1,15 @@
+## Brief
+
+Medewerker [$(data.volledigeNaam)] ($(data.personeelsnummer)) treedt uit dienst.
+
+## Description
+
+Medewerker [$(data.volledigeNaam)] met personeelsnummer [$(data.personeelsnummer)] zal per [$(data.nlDatumuitdienst)] uit dienst treden.
+
+De in te nemen c.q. in te trekken middelen en privileges zijn in aangehechte activiteiten gespecificeerd.
+
+❯ naam:		$(data.volledigeNaam)
+❯ pers.#:		$(data.personeelsnummer){?} ($(data.dienstverbandvolgnummer)){end}
+❯ afdeling:	[$(data.afdelingscode1)] $(data.afdelingsnaamVolledig1)
+❯ functie:		[$(data.functiecode1)] $(data.functienaam1)
+❯ uit dienst:		$(data.nlDatumuitdienst)

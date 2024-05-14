@@ -1,45 +1,82 @@
 Aan medewerker
 
 ❯ naam:		$(data.volledigeNaam)
-❯ pers.#:		$(data.personeelsnummer)
-❯ afdeling:	[$(data.afdelingscode)] $(data.afdelingsnaam)
-❯ functie:		[$(data.functiecode)] $(data.functienaam)
+❯ pers.#:		$(data.personeelsnummer){?} ($(data.dienstverbandvolgnummer)){end}
+❯ afdeling:	[$(data.afdelingscode1)] $(data.afdelingsnaamVolledig1){if([data].[afdelingscode2] > "")}
+	wordt:	[$(data.afdelingscode2)] $(data.afdelingsnaamVolledig2){end}
+❯ functie:		[$(data.functiecode1)] $(data.functienaam1){if([data].[functiecode2] > "")}
+	wordt:	[$(data.functiecode2)] $(data.functienaam2){end}
+❯ wijzigt:		$(data.nlAfdelingsbegindatum2)
+
+momenteel toegewezen fysieke toegang:
+
+{if([data].[enrichment].[assignments] > "")
+
+    }$(data.enrichment.assignments){
+
+else
+
+    }❯ geen toewijzingen ❮{
+
+end}
 
 op basis van persoonlijke zaken {?}(woon-werk $(data.vicinity)) {end}toe te wijzen electronische toegang:
 
 {if([data].[enrichment].[priveProfiel] > "")
+
     }$(data.enrichment.priveProfiel){
+
 else
+
     }❯ geen toewijzingen ❮{
+
 end}
 
 op basis van afdeling en functie toe te wijzen electronische toegang:
 
 {if([data].[enrichment].[afdelingProfiel] > "")
+
     }$(data.enrichment.afdelingProfiel){
-    if([data].[enrichment].[functieProfiel] > "")}
+
+    if([data].[enrichment].[functieProfiel] > "")
+
+        }
 $(data.enrichment.functieProfiel){
+
     end}{
 else
     }{if([data].[enrichment].[functieProfiel] > "")
+
         }$(data.enrichment.functieProfiel){
+
     else
+
         }❯ geen toewijzingen ❮{
+
     end}{
 end}
 
 op basis van afdeling en functie toe te wijzen sleuteltoegang:
 
 {if([data].[enrichment].[afdelingSleutel] > "")
+
     }$(data.enrichment.afdelingSleutel){
-    if([data].[enrichment].[functieSleutel] > "")}
+
+    if([data].[enrichment].[functieSleutel] > "")
+    
+        }
 $(data.enrichment.functieSleutel){
+
     end}{
 else
     }{if([data].[enrichment].[functieSleutel] > "")
+
         }$(data.enrichment.functieSleutel){
+
     else
+
         }❯ geen toewijzingen ❮{
+
     end}{
 end}
 

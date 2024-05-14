@@ -1,0 +1,28 @@
+## Description
+
+Verzoek inname en/of toewijzing pieper op basis van de volgende gegevens:
+
+❯ locatie:		$(data.werkLocatie)
+❯ afdeling:	[$(data.afdelingscode1)] $(data.afdelingsnaamVolledig1){if([data].[afdelingscode2] > "")}
+	wordt:	[$(data.afdelingscode2)] $(data.afdelingsnaamVolledig2){end}
+❯ functie:		[$(data.functiecode1)] $(data.functienaam1){if([data].[functiecode2] > "")}
+	wordt:	[$(data.functiecode2)] $(data.functienaam2){end}
+❯ naam:		$(data.volledigeNaam)
+❯ pers.#:		$(data.personeelsnummer){?} ($(data.dienstverbandvolgnummer)){end}
+
+momenteel toegewezen pieper(s):
+
+{if([data].[enrichment].[assignments] > "")
+
+    }$(data.enrichment.assignments){
+
+else
+
+    }❯ geen toewijzingen ❮{
+
+end}
+
+
+## Conditions
+
+$(data.pieperSelector) == "True"
