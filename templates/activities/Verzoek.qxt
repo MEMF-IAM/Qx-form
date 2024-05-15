@@ -1,0 +1,30 @@
+Aan medewerker
+
+❯ naam:		$(data.medewerker_volledigeNaam)
+❯ pers.#:		$(data.medewerker_personeelsnummer)
+❯ afdeling:	[$(data.medewerker_afdelingscode)] $(data.medewerker_afdelingsnaam)
+❯ functie:		[$(data.medewerker_functiecode)] $(data.medewerker_functienaam) 
+
+momenteel toegewezen fysieke toegang:
+
+{if([data].[enrichment].[assignments] > "")}$(data.enrichment.assignments){else}❯ geen toewijzingen ❮{end}
+
+{if([data].[form].[FT_electronic_select_label] > "")}Verzoek additioneel toe te wijzen electronische toegang:
+
+❯ {replace(replace([data].[form].[FT_electronic_select_label]," … ", " x "),"|","
+❯ ")}
+
+{end}{if([data].[form].[FT_electronic_motivation] > "")}Motivatie, onderbouwing:
+
+❯ $(data.form.FT_electronic_motivation)
+
+{end}{if([data].[form].[FT_key_select_label] > "")}Verzoek additioneel toe te wijzen sleuteltoegang:
+
+❯ {replace(replace([data].[form].[FT_key_select_label]," … ", " x "),"|","
+❯ ")}
+
+{end}{if([data].[form].[FT_key_motivation] > "")}Motivatie, onderbouwing:
+
+❯ $(data.form.FT_key_motivation)
+
+{end}
