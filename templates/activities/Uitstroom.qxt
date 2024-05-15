@@ -8,12 +8,4 @@ Aan medewerker
 
 momenteel toegewezen fysieke toegang:
 
-{if([data].[enrichment].[assignments] > "")
-
-    }$(data.enrichment.assignments){
-
-else
-
-    }❯ geen toewijzingen ❮{
-
-end}
+{if([data].[enrichment].[assignments] > "")}$(data.enrichment.assignments){else}❯ geen toewijzingen ❮{end}
