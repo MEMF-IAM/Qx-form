@@ -1,0 +1,15 @@
+## Brief
+
+Verzoek uitbreiding in toegang voor medewerker [$(data.medewerker_volledigeNaam)] ($(data.medewerker_personeelsnummer)).
+
+## Description
+
+Medewerker [$(data.medewerker_volledigeNaam)] met personeelsnummer [$(data.medewerker_personeelsnummer)] verzoekt uitbreiding van toegang.
+
+De uit te reiken c.q. toe te wijzen middelen en privileges zijn in aangehechte activiteiten gespecificeerd.
+
+❯ naam:		$(data.medewerker_volledigeNaam)
+❯ pers #:	$(data.medewerker_personeelsnummer){?} ($(data.medewerker_dienstverbandvolgnummer)){end}
+❯ afdeling:	[$(data.medewerker_afdelingscode)] $(data.medewerker_afdelingsnaam)
+❯ functie:	[$(data.medewerker_functiecode)] $(data.medewerker_functienaam)
+

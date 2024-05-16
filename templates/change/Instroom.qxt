@@ -1,0 +1,15 @@
+## Brief
+
+Medewerker [$(data.volledigeNaam)] ($(data.personeelsnummer)) komt in dienst.
+
+## Description
+
+Medewerker [$(data.volledigeNaam)] met personeelsnummer [$(data.personeelsnummer)] treedt per [$(data.nlDatumindienst)] als [$(data.functienaam)] in dienst op afdeling/unit [$(data.afdelingsnaam)].
+
+De uit te reiken c.q. toe te wijzen middelen en privileges zijn in aangehechte activiteiten gespecificeerd.
+
+❯ naam:		$(data.volledigeNaam)
+❯ pers #:	$(data.personeelsnummer){?} ($(data.dienstverbandvolgnummer)){end}
+❯ afdeling:	[$(data.afdelingscode)] $(data.afdelingsnaam)
+❯ functie:	[$(data.functiecode)] $(data.functienaam)
+❯ in dienst:	$(data.nlDatumindienst)

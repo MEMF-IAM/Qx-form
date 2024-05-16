@@ -6,7 +6,7 @@ Aan medewerker
 	wordt:	[$(data.afdelingscode2)] $(data.afdelingsnaamVolledig2){end}
 ❯ functie:		[$(data.functiecode1)] $(data.functienaam1){if([data].[functiecode2] > "")}
 	wordt:	[$(data.functiecode2)] $(data.functienaam2){end}
-❯ wijzigt:		$(data.nlAfdelingsbegindatum2)
+❯ wijzigt:		{if([data].[functiebegindatum2] > "")}$(data.nlFunctiebegindatum2){else}$(data.nlAfdelingsbegindatum2){end}
 
 momenteel toegewezen fysieke toegang:
 
