@@ -3,7 +3,7 @@
 */
 
 .formRenderer__header h2 {
-	color: white;
+	color: white ! important;
 }
 form-caption {
 	background-color: #7B7BB7;
