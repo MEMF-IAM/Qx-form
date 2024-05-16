@@ -1,0 +1,16 @@
+# Generic
+
+{?}❯ [$(data.F4D3D1C1-1EE7-4A77-B468-76D722FB27C1_name)] ± $(data.F4D3D1C1-1EE7-4A77-B468-76D722FB27C1_specification){end}
+
+# Electronic
+
+{if($(data.F4D3D1C1-1EE7-4A77-B468-76D722FB27C1_kind) == 'Toegang met pas')}❯ [$(data.F4D3D1C1-1EE7-4A77-B468-76D722FB27C1_name)] ± $(data.F4D3D1C1-1EE7-4A77-B468-76D722FB27C1_specification){end}
+
+# Key
+
+{if($(data.F4D3D1C1-1EE7-4A77-B468-76D722FB27C1_kind) == 'Toegang met sleutel')}❯ [$(data.F4D3D1C1-1EE7-4A77-B468-76D722FB27C1_name)] ± $(data.F4D3D1C1-1EE7-4A77-B468-76D722FB27C1_specification){end}
+
+# Pager
+
+{?}❯ [$(data.9842F656-7AFF-4031-AFCC-4F6B110E262D_name)] ± $(data.9842F656-7AFF-4031-AFCC-4F6B110E262D_specification){end}
+
