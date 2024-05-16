@@ -9,22 +9,22 @@ momenteel toegewezen fysieke toegang:
 
 {if([data].[enrichment].[assignments] > "")}$(data.enrichment.assignments){else}❯ geen toewijzingen ❮{end}
 
-{if([data].[form].[FT_electronic_select_label] > "")}Verzoek additioneel toe te wijzen electronische toegang:
+{if([data].[FT_electronic_select_label] > "")}Verzoek additioneel toe te wijzen electronische toegang:
 
-❯ {replace(replace([data].[form].[FT_electronic_select_label]," … ", " x "),"|","
+❯ {replace(replace([data].[FT_electronic_select_label]," … ", " x "),"|","
 ❯ ")}
 
-{end}{if([data].[form].[FT_electronic_motivation] > "")}Motivatie, onderbouwing:
+{end}{if([data].[FT_electronic_motivation] > "")}Motivatie, onderbouwing:
 
-❯ $(data.form.FT_electronic_motivation)
+❯ $(data.FT_electronic_motivation)
 
-{end}{if([data].[form].[FT_key_select_label] > "")}Verzoek additioneel toe te wijzen sleuteltoegang:
+{end}{if([data].[FT_key_select_label] > "")}Verzoek additioneel toe te wijzen sleuteltoegang:
 
-❯ {replace(replace([data].[form].[FT_key_select_label]," … ", " x "),"|","
+❯ {replace(replace([data].[FT_key_select_label]," … ", " x "),"|","
 ❯ ")}
 
-{end}{if([data].[form].[FT_key_motivation] > "")}Motivatie, onderbouwing:
+{end}{if([data].[FT_key_motivation] > "")}Motivatie, onderbouwing:
 
-❯ $(data.form.FT_key_motivation)
+❯ $(data.FT_key_motivation)
 
 {end}
