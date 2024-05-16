@@ -2,6 +2,9 @@
 @import url("https://memo.3bdesign.nl/index.php?title=UPEM/Implementation/QxForm.css&action=raw");
 */
 
+.formRenderer__header h2 {
+	color: white;
+}
 form-caption {
 	background-color: #7B7BB7;
 }
