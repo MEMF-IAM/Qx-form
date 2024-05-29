@@ -12,15 +12,8 @@ Verzoek inname en/of toewijzing pieper op basis van de volgende gegevens:
 
 momenteel toegewezen pieper(s):
 
-{if([data].[enrichment].[assignments] > "")
+{if([data].[enrichment].[assignments] > "")}{if(contains([data].[enrichment].[assignments], "No assetlink was found"))}❯ geen toewijzingen ❮{else}$(data.enrichment.assignments){end}{else}❯ geen toewijzingen ❮{end}
 
-    }$(data.enrichment.assignments){
-
-else
-
-    }❯ geen toewijzingen ❮{
-
-end}
 
 
 ## Conditions
