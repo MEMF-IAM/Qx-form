@@ -1,0 +1,10 @@
+dark green text
+#004c41
+
+dark green background
+#004c41
+
+warm white background
+rgba(11,41,37,0.25)
+#fdfbdf
+
