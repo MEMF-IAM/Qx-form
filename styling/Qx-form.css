@@ -26,9 +26,7 @@ form-canvas {
 }
 .ant-btn[disabled],
 .ant-btn {
-/*
     background-color: #F2F2F8 !important;
-*/
     color: white !important;
     font-weight: bolder;
 }
