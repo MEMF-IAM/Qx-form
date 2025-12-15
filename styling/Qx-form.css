@@ -7,40 +7,49 @@
 }
 
 form-caption {
-	background-color: #7B7BB7;
+	background-color: hsl(171, 29%, 60%);
 }
 
 form-canvas {
-	background-color: #F2F2F8;
+	background-color: hsl(171, 30%, 96%);
 }
 
-.activity-edit-form {
+.activity-edit-form,
+.layout-form-horizontal > .layout-form-vertical {
 	/* https://stackoverflow.com/a/31472069 */
 	/* NOTE::Mark the last color of the first gradient fully transparent or the following gradient will not be shown ! */
 	background-image:
-		linear-gradient(to bottom, rgba(72, 72, 132, 1) 0em, rgba(123, 123, 183, 1) 0.1em, rgba(242, 242, 248, 0) 0.3em),
-		linear-gradient(to top, rgba(123, 123, 183, 1) 0em, rgba(242, 242, 248, 1) 0.2em)
+		linear-gradient(to bottom, hsl(171, 29%, 40%) 0em, hsl(171, 29%, 60%) 0.1em, hsla(171, 30%, 96%, 0) 0.3em),
+		linear-gradient(to top, hsl(171, 29%, 60%) 0em, hsl(171, 30%, 96%) 0.2em)
 	;
-}
-
-.ant-input[disabled] {
-	background-color: #F9E5D9;
-	color: #000;
-	font-style: italic;
-}
-
-.ant-btn[disabled],
-.ant-btn {
-    background-color: #F2F2F8 !important;
-    color: white !important;
-    font-weight: bolder;
 }
 
 .layout-form-horizontal > .layout-form-vertical {
 	padding: 0.6em;
 	border: 1px solid #aaa;
-	background-image:
-		linear-gradient(to bottom, rgba(72, 72, 132, 1) 0em, rgba(123, 123, 183, 1) 0.1em, rgba(242, 242, 248, 0) 0.3em),
-		linear-gradient(to top, rgba(123, 123, 183, 1) 0em, rgba(242, 242, 248, 1) 0.2em)
-	;
+}
+
+.ant-input[disabled] {
+	font-style: italic;
+}
+
+.ant-btn,
+.ant-btn[disabled] {
+	/*
+	background-color: hsl(23, 73%, 91%);
+	*/
+    background-color: hsl(171, 100%, 15%) !important;
+    color: white !important;
+    font-weight: bolder;
+}
+
+.ant-input {
+	font-size: 1rem;
+}
+
+.ant-input[disabled] {
+	color: hsl(171, 100%, 15%) !important;
+	background-color: hsl(171, 29%, 98%);
+	cursor: text;
+	border-color: hsl(171, 29%, 40%);
 }
