@@ -2,60 +2,95 @@
 @import url( "https://raw.githubusercontent.com/MEMF-IAM/Qx-form/main/styling/Qx-form.css" );
 */
 
-.formRenderer__header h2 {
+.formRenderer__header h2
+{
 	color: white ! important;
 }
 
-form-caption {
+form-caption
+{
 	background-color: hsl(171, 29%, 60%);
 }
 
-form-canvas {
+form-canvas
+{
 	background-color: hsl(171, 30%, 96%);
 }
 
 .activity-edit-form,
-.layout-form-horizontal > .layout-form-vertical {
+/* .layout-form-horizontal > .layout-form-vertical, */
+/* .layout-form-cell-vertical.captioned:has(input), */
+/* .layout-form-cell-vertical.captioned:has(.ant-input-group), */
+.layout-form-vertical .layout-form-vertical:has(>.layout-form-cell-vertical.captioned)
+{
 	/* https://stackoverflow.com/a/31472069 */
 	/* NOTE::Mark the last color of the first gradient fully transparent or the following gradient will not be shown ! */
 	background-image:
-		linear-gradient(to bottom, hsl(171, 29%, 40%) 0em, hsl(171, 29%, 60%) 0.1em, hsla(171, 30%, 96%, 0) 0.3em),
-		linear-gradient(to top, hsl(171, 29%, 60%) 0em, hsl(171, 30%, 96%) 0.2em)
-	;
+		  linear-gradient(to bottom, hsl(171, 29%, 40%) 0em, hsl(171, 29%, 60%) 0.1em, hsla(171, 30%, 96%, 0) 0.3em)
+		, linear-gradient(to top, hsl(171, 29%, 60%) 0em, hsl(171, 30%, 96%) 0.2em);
 }
 
-.layout-form-vertical:empty {
+.layout-form-vertical:empty
+{
 	visibility: hidden;
 }
 
-.layout-form-horizontal > .layout-form-vertical {
+.activity-edit-form,
+/* .layout-form-horizontal > .layout-form-vertical, */
+/* .layout-form-cell-vertical.captioned:has(input), */
+/* .layout-form-cell-vertical.captioned:has(.ant-input-group), */
+.layout-form-vertical .layout-form-vertical:has( > .layout-form-cell-vertical.captioned )
+{
 	padding: 0.6em;
 	border: 1px solid #aaa;
 }
 
-.ant-input[disabled] {
-	/*
-	font-style: italic;
-	*/
-}
-
 .ant-btn,
-.ant-btn[disabled] {
+.ant-btn[disabled]
+{
 	/*
 	background-color: hsl(23, 73%, 91%);
 	*/
-    background-color: hsl(171, 100%, 15%) !important;
-    color: white !important;
-    font-weight: bolder;
+	background-color: hsl(171, 100%, 15%) !important;
+	color: white !important;
+	font-weight: bolder;
 }
 
-.ant-input {
+.ant-input
+{
 	font-size: 1rem;
 }
 
-.ant-input[disabled] {
+.ant-input[disabled]
+{
 	color: hsl(171, 100%, 15%) !important;
 	background-color: hsl(171, 29%, 98%);
 	cursor: text;
 	border-color: hsl(171, 29%, 40%);
+	/*	font-style: italic; */
+}
+
+/*
+  footer logo
+  ugly hack because Qx form refuses to store class attributes in elements
+*/
+
+.layout-form-cell-vertical:has(figure):has(img)
+{
+	padding: 2em 0ex 0em 0ex;
+	border-top: 2px solid hsl(171, 29%, 40%);
+}
+
+/*
+  bottom version line
+  ugly hack because Qx form refuses to store class attributes in elements
+*/
+
+.layout-form-cell-vertical:has(>div:not([class])):has(>div:not([class])):has(strong)
+{
+	padding: 2em 0ex 0em 0ex;
+	border-top: 2px solid hsl(171, 29%, 40%);
+	color: rgb(189, 189, 189);
+	font-size: 70%;
+	text-align: center;
 }
