@@ -24,13 +24,19 @@ form-canvas {
 	;
 }
 
+.layout-form-vertical:empty {
+	visibility: hidden;
+}
+
 .layout-form-horizontal > .layout-form-vertical {
 	padding: 0.6em;
 	border: 1px solid #aaa;
 }
 
 .ant-input[disabled] {
+	/*
 	font-style: italic;
+	*/
 }
 
 .ant-btn,
